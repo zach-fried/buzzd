@@ -27,4 +27,10 @@ def get_bars(request):
     return render(request, 'bars/bars.html', context)
 
 def get_bar(request, pk):
-    return render(request, 'bars/single-bar.html')
+    barObject = None
+
+    for bar in barsList:
+        if bar['id'] == pk:
+            barObject = bar
+
+    return render(request, 'bars/single-bar.html', {'bar':barObject})
