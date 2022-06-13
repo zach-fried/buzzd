@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Top Rated Bars</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for bar in bars %}
+
+        {% if bar.topRated %}
+
+        <tr>
+            <td>{{bar.id}}</td>
+            <td>{{bar.name}}</td>
+            <td>{{bar.location}}</td>
+        </tr>
+
+        {% endif %}
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
